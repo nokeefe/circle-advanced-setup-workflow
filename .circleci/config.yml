@@ -58,6 +58,8 @@ workflows:
             module-a
             module-b
             module-c module-b
+          requires:
+            - common-pre
 
 orbs:
   # An "embedded" orb to facilitate config splitting
