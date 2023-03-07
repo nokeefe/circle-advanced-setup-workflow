@@ -10,7 +10,7 @@ orbs:
 jobs:
   module-a-build:
     docker:
-      - image: alpine
+      - image: cimg/base:latest
     steps:
       - common-say-hello:
           to: A
