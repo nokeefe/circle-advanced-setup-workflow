@@ -37,7 +37,7 @@ commands:
 jobs:
   common-pre:
     docker:
-      - image: alpine
+      - image: cimg/base:stable-18.04
     steps:
       - common-say-hello
       - run: echo 'Jobs with `common-` prefix are intended to be shared among modules'
@@ -47,6 +47,7 @@ workflows:
   setup-workflow:
     when: << pipeline.parameters.run-setup >>
     jobs:
+      - common-pre
       - config-splitting/setup-dynamic-config:
           force-all: << pipeline.parameters.force-all >>
           base-revision: main
