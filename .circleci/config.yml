@@ -30,7 +30,7 @@ commands:
         type: string
         default: you anonymous
     steps:
-      - run: echo 'Greetings to << parameters.to >> from the shared command!'
+      - run: echo 'Greetings to << parameters.to >> from the shared command!!'
       - run: echo 'The value of `custom-parameter` was "<< pipeline.parameters.custom-parameter >>"'
 
 # Common jobs for the main workflows
