@@ -58,6 +58,7 @@ workflows:
             module-a
             module-b
             module-c module-b
+            module-d
           requires:
             - common-pre
 

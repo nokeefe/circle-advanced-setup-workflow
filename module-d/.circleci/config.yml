@@ -1,0 +1,27 @@
+# Config dedicated for module C
+# All the resources must be prefixed with `module-c-` to avoid conflicts
+
+version: 2.1
+
+orbs:
+  module-d-hello-build: circleci/hello-build@0.0.14
+
+jobs:
+  module-d-build:
+    docker:
+      - image: alpine
+    steps:
+      - common-say-hello:
+          to: D
+      - run: echo 'Hello world from module D! :3'
+
+workflows:
+  module-d-workflow:
+    jobs:
+      - common-pre
+      - module-d-build:
+          requires:
+            - common-pre
+      - module-d-hello-build/hello-build:
+          requires:
+            - common-pre
