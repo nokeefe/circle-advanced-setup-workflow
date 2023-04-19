@@ -59,6 +59,7 @@ workflows:
             module-b
             module-c module-b
             module-d
+            build-aws-html-site
           requires:
             - common-pre
 
