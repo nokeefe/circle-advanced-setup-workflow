@@ -14,7 +14,7 @@ jobs:
     steps:
       - common-say-hello:
           to: A
-      - run: echo 'Hello from module A again!'
+      - run: echo 'Hello from module A again! Test'
 
 workflows:
   module-a-workflow:
